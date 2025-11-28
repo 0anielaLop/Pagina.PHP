@@ -1,0 +1,80 @@
+===Database animelist_db
+
+== Table structure for table animelist_db_animes
+
+|------
+|Column|Type|Null|Default
+|------
+|//**id_anime**//|int(11)|No|
+|id_genres|int(11)|No|
+|name|varchar(255)|No|
+|synopsis|text|Yes|NULL
+|n_episodes|int(11)|Yes|NULL
+|img|varchar(255)|Yes|NULL
+|state|tinyint(4)|Yes|1
+== Dumping data for table animelist_db_animes
+
+|1|3|Neon Genesis Evangelion|Serie de ciencia ficción y drama psicológico donde un grupo de adolescentes pilotea mechas para proteger la Tierra de misteriosas criaturas llamadas Ángeles.|26|evangelion.jpg|1
+|2|5|Death Note|Un estudiante encuentra un cuaderno con el poder de matar a cualquiera cuyo nombre escriba en él, iniciando una batalla intelectual contra las fuerzas de la ley.|37|deathnote.jpg|1
+|3|1|Shingeki no Kyojin|En un mundo asediado por titanes devoradores de humanos, la humanidad lucha por sobrevivir tras enormes murallas que resguardan sus últimas ciudades.|25|aot.jpg|1
+|4|1|Mob Psycho 100|Un joven con poderes psíquicos inmensos busca vivir una vida normal mientras enfrenta amenazas sobrenaturales y su propio crecimiento emocional.|12|mobpsycho100.jpg|1
+|5|4|Violet Evergarden|Una exsoldado que busca comprender el significado del amor comienza a trabajar escribiendo cartas para otros, mientras enfrenta su pasado.|13|violetevergarden.jpg|1
+|6|1|Sousou no Frieren|Una elfa maga que sobrevivió a sus compañeros héroes emprende un viaje para comprender las emociones humanas y el valor del tiempo.|28|frieren.jpg|1
+== Table structure for table animelist_db_genres
+
+|------
+|Column|Type|Null|Default
+|------
+|//**id_genres**//|int(11)|No|
+|name|varchar(50)|No|
+|state|tinyint(4)|Yes|1
+|description|varchar(500)|Yes|NULL
+== Dumping data for table animelist_db_genres
+
+|1|Shōnen|1|Historias centradas en acción, aventura y crecimiento personal, dirigidas principalmente a un público
+|2|Shōjo|1|Tramas enfocadas en el romance, las emociones y las relaciones personales, orientadas al público fem
+|3|Seinen|1|Animes con temáticas más maduras, realistas o psicológicas, dirigidos a adultos jóvenes.
+|4|Josei|1|Relatos que abordan la vida y las relaciones desde una perspectiva femenina adulta, con un tono más 
+|5|Isekai|1|Historias donde los protagonistas son transportados o reencarnados en otro mundo o realidad paralela
+== Table structure for table animelist_db_list
+
+|------
+|Column|Type|Null|Default
+|------
+|//**id_list**//|int(11)|No|
+|email|varchar(100)|No|
+|id_anime|int(11)|No|
+|p_score|int(11)|Yes|NULL
+|g_score|int(11)|Yes|NULL
+|progress|int(11)|Yes|NULL
+|status|enum(&#039;Watching&#039;, &#039;Completed&#039;, &#039;OnHold&#039;, &#039;Dropped&#039;, &#039;PlanToWatch&#039;)|Yes|PlanToWatch
+|state|tinyint(4)|Yes|1
+|fecha_agregado|datetime|Yes|current_timestamp()
+== Dumping data for table animelist_db_list
+
+|1|danilalopcia@gmail.com|1|9|8|26|Completed|1|2025-11-13 11:08:49
+|2|danilalopcia@gmail.com|2|10|9|37|Completed|1|2025-11-13 11:08:49
+|3|danilalopcia@gmail.com|3|10|9|25|Completed|1|2025-11-13 11:08:49
+|4|danilalopcia@gmail.com|4|9|8|12|Completed|1|2025-11-13 11:08:49
+|5|danilalopcia@gmail.com|5|10|9|13|OnHold|1|2025-11-13 11:08:49
+|6|danilalopcia@gmail.com|6|9|9|20|Watching|1|2025-11-13 11:08:49
+|7|jr72@gmail.com|2|9|NULL|1|Watching|1|2025-11-26 07:31:09
+|8|daniela@gmail.com|3|10|NULL|25|Completed|1|2025-11-26 08:05:13
+|10|daniela@gmail.com|1|8|NULL|12|Watching|1|2025-11-26 08:06:23
+== Table structure for table animelist_db_users
+
+|------
+|Column|Type|Null|Default
+|------
+|//**email**//|varchar(100)|No|
+|username|varchar(50)|No|
+|password|varchar(255)|No|
+|state|tinyint(4)|Yes|1
+== Dumping data for table animelist_db_users
+
+|daniela@gmail.com|daniela|$2y$10$pljAe74cPHQMvCJoDVhin.GBl3c/Nv4DjOZOaYgWisgV13sApjHCy|1
+|danila@gmail.com|danila|$2y$10$IVZOhsMoHelmSHvz/5/BqOLYnnncJAvoGq4ymWaHs8k1y2kiYY06q|1
+|danilalopcia@gmail.com|o_0ani|12345|1
+|danilalopciaa@gmail.com|ani|$2y$10$/GL2g9/2ZQREwpJzH7qT2u.yDc0Y4Xm9IHLQ7r81AFVHN4opACgQK|1
+|jr72@gmail.com|esteban|$2y$10$K5cY1TLWhHeSb126DAuqWOFVdve8vEjGaWLmTAkKqeMgT5PtRk4kK|1
+|santi@gmail.com|k.lis|$2y$10$TDKl2qN6d2abLhJaX9tL/eashjAMlXy4/TndxBmX/bF35ftzWHa4u|1
